@@ -2,74 +2,81 @@
 html, body, #root {
     height: 100%;
     margin: 0;
-}
-
-/* Fullscreen container */
-.fullscreen-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-color: #131114; /* Neutral background color */
-}
-
-/* Form container */
-.form-container {
+  }
+  
+  /* Fullscreen container */
+  .page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 800px; /* Maximum width for the form */
+    justify-content: center;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: #0b0a09; /* Background color */
+    color: #d27532; /* Text color */
     padding: 20px;
-    background-color: #0b0a09; /* Darker background for the form */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #ffffff; /* Text color for the form */
-}
-
-/* Style for the card inside the form */
-.card {
+    box-sizing: border-box; /* Ensure padding does not affect dimensions */
+  }
+  
+  /* Title style */
+  .page-container h1 {
+    margin-bottom: 20px;
+    color: #d27532; /* Primary color for title */
+  }
+  
+  /* Style for the grid layout */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 16px; /* Space between grid items */
+    width: 100%;
+    max-width: 1200px; /* Optional max width for better centering */
+    justify-content: center; /* Center the grid items horizontally */
+    align-items: start; /* Align items to the start of the grid cell */
+  }
+  
+  /* Style for each grid item */
+  .grid-item {
     display: flex;
     flex-direction: row;
     overflow: hidden;
     border: 1px solid #d27532; /* Primary color border */
     border-radius: 8px;
-    margin-bottom: 16px;
-    width: 100%; /* Full width of the form container */
-    background-color: #0b0a09; /* Neutral color background for the card */
-}
-
-/* Style for the image within the card */
-.card-image {
-    width: 150px; /* Decrease the width of the image */
-    height: 100%; /* Set the height of the image to match the card height */
+    background-color: #131114; /* Neutral color background for the card */
+    padding: 16px;
+    color: #ffffff; /* White text color */
+  }
+  
+  /* Style for the image within the grid item */
+  .grid-image {
+    width: 150px; /* Fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
-}
-
-/* Style for the content inside the card */
-.card-content {
-    flex: 1;
+    border-right: 1px solid #d27532; /* Primary color border for image */
+    margin-right: 16px; /* Space between image and text content */
+  }
+  
+  /* Style for the content within the grid item */
+  .grid-content {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-}
-
-/* Style for the heading inside the card */
-.card-heading {
+  }
+  
+  /* Style for the heading inside the grid item */
+  .grid-heading {
     font-size: 1.25rem; /* Adjust font size for the heading */
     margin-bottom: 8px;
     color: #d27532; /* Primary color for the heading */
-}
-
-/* Style for the text inside the card */
-.card-text {
+  }
+  
+  /* Style for the text inside the grid item */
+  .grid-text {
     margin-bottom: 8px;
     color: #ffffff; /* White text color */
-}
-
-/* Style for the button inside the card */
-.card-button {
+  }
+  
+  /* Style for the button inside the grid item */
+  .grid-button {
     align-self: flex-start;
     background-color: #d27532; /* Primary color for the button */
     color: #ffffff; /* White text color */
@@ -78,15 +85,15 @@ html, body, #root {
     padding: 8px 16px;
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-/* Hover state for the button */
-.card-button:hover {
+  }
+  
+  /* Hover state for the button */
+  .grid-button:hover {
     background-color: #b96329; /* Slightly darker shade of the primary color */
-}
-
-/* Style for the back button */
-.back-button {
+  }
+  
+  /* Style for the back button */
+  .back-button {
     margin-top: 20px;
     padding: 8px 16px;
     background-color: #d27532; /* Primary color for the button */
@@ -95,26 +102,27 @@ html, body, #root {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-/* Hover state for the back button */
-.back-button:hover {
+  }
+  
+  /* Hover state for the back button */
+  .back-button:hover {
     background-color: #b96329; /* Slightly darker shade of the primary color */
-}
-
-/* Define additional color variables */
-.success {
+  }
+  
+  /* Define additional color variables */
+  .success {
     color: #9ff51f; /* Success color */
-}
-
-.caution {
+  }
+  
+  .caution {
     color: #f6ed10; /* Caution color */
-}
-
-.danger {
+  }
+  
+  .danger {
     color: #d84b4e; /* Danger color */
-}
-
-.info {
+  }
+  
+  .info {
     color: #1d26b5; /* Info color */
-}
+  }
+  
