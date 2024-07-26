@@ -34,7 +34,7 @@ const ThirdPage = () => {
         <button className="back-button" onClick={() => navigate('/Buses')}>Back to Second Page</button>
       </div>
       <div className="image-section">
-        <h2>Image Display</h2>
+        <h2>Route</h2>
         <img src={imageSrc} alt="Bus Image" />
       </div>
     </div>
