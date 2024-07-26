@@ -8,32 +8,29 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 100vw; /* Ensure full viewport width */
+  height: 100vh; /* Ensure full viewport height */
   background-color: #0b0a09; /* Neutral color */
   color: #d27532; /* Primary color */
 }
 
-/* Style form elements */
-form {
+/* Adjustments for form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 500px; /* Limit maximum width */
   padding: 20px;
   background-color: #131114; /* Dark background for form */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Heading */
-h1 {
-  color: #d27532; /* Primary color */
-}
-
-/* Buttons */
-button {
-  background-color: #d27532; /* Primary color */
-  color: #fff;
-}
-
-button:hover {
-  background-color: #b9631a; /* Slightly darker shade of primary color */
+/* Horizontal form controls */
+.horizontal-form-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Take full width */
+  margin-bottom: 20px; /* Add spacing below the controls */
 }
