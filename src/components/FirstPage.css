@@ -1,0 +1,39 @@
+/* Make the page fullscreen */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.fullscreen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0b0a09; /* Neutral color */
+  color: #d27532; /* Primary color */
+}
+
+/* Style form elements */
+form {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #131114; /* Dark background for form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+  color: #d27532; /* Primary color */
+}
+
+/* Buttons */
+button {
+  background-color: #d27532; /* Primary color */
+  color: #fff;
+}
+
+button:hover {
+  background-color: #b9631a; /* Slightly darker shade of primary color */
+}

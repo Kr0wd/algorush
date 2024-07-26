@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Box, Button, FormControl, FormLabel, Input, Heading, Stack } from '@chakra-ui/react';
 import busData from './bus.json'; // Adjust the path if needed
+import './FirstPage.css'; // Import the CSS file
 
 const FirstPage = () => {
   const navigate = useNavigate();
@@ -22,47 +24,47 @@ const FirstPage = () => {
   };
 
   return (
-    <div>
-      <h1>First Page</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            From:
-            <input
-              type="text"
-              name="from"
-              value={formData.from}
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            To:
-            <input
-              type="text"
-              name="to"
-              value={formData.to}
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Time:
-            <input
-              type="text"
-              name="time"
-              value={formData.time}
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <button type="submit">Search</button>
-      </form>
+    <div className="fullscreen-container">
+      <Box p={4} className="form-container">
+        <Heading mb={6}>Search for Buses</Heading>
+        <form onSubmit={handleSubmit}>
+          <Stack spacing={4}>
+            <FormControl>
+              <FormLabel htmlFor="from">From:</FormLabel>
+              <Input
+                id="from"
+                name="from"
+                value={formData.from}
+                onChange={handleChange}
+                required
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor="to">To:</FormLabel>
+              <Input
+                id="to"
+                name="to"
+                value={formData.to}
+                onChange={handleChange}
+                required
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor="time">Time:</FormLabel>
+              <Input
+                id="time"
+                name="time"
+                value={formData.time}
+                onChange={handleChange}
+                required
+              />
+            </FormControl>
+            <Button type="submit" mt={4}>
+              Search
+            </Button>
+          </Stack>
+        </form>
+      </Box>
     </div>
   );
 };
