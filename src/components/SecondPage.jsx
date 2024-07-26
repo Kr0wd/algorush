@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, CardBody, Image, Stack, Heading, Text, CardFooter, Button } from '@chakra-ui/react';
+import './SecondPage.css'; // Import the CSS file
 
 const SecondPage = () => {
   const navigate = useNavigate();
@@ -8,33 +9,28 @@ const SecondPage = () => {
   const matches = location.state?.matches || [];
 
   return (
-    <div>
+    <div className="page-container">
       <h1>Second Page</h1>
       {matches.length > 0 ? (
         matches.map((match, index) => (
           <Card
             key={index}
-            direction={{ base: 'column', sm: 'row' }}
-            overflow="hidden"
-            variant="outline"
-            mb="4"
-            maxW="800px" // Increase the maximum width of the card
+            className="card"
           >
             <Image
-              objectFit="cover"
-              maxW={{ base: '100%', sm: '150px' }} // Decrease the maximum width of the image
+              className="card-image"
               src={match.img}
               alt={match.name}
             />
-            <Stack>
+            <Stack className="card-content">
               <CardBody>
-                <Heading size="md">{match.name}</Heading>
-                <Text py="2"><strong>From:</strong> {match.from}</Text>
-                <Text><strong>To:</strong> {match.to}</Text>
-                <Text><strong>Time:</strong> {match.time}</Text>
+                <Heading className="card-heading">{match.name}</Heading>
+                <Text className="card-text"><strong>From:</strong> {match.from}</Text>
+                <Text className="card-text"><strong>To:</strong> {match.to}</Text>
+                <Text className="card-text"><strong>Time:</strong> {match.time}</Text>
               </CardBody>
               <CardFooter>
-                <Button variant="solid" colorScheme="blue" onClick={() => navigate('/third', { state: { match } })}>
+                <Button className="card-button" onClick={() => navigate('/third', { state: { match } })}>
                   View Details
                 </Button>
               </CardFooter>
@@ -44,10 +40,9 @@ const SecondPage = () => {
       ) : (
         <p>No matches found</p>
       )}
-      <button onClick={() => navigate('/')}>Back to First Page</button>
+      <button className="back-button" onClick={() => navigate('/')}>Back to First Page</button>
     </div>
   );
 };
 
 export default SecondPage;
-

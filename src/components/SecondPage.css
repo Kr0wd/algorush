@@ -1,0 +1,120 @@
+/* Ensure full height for the html, body, and root elements */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+}
+
+/* Fullscreen container */
+.fullscreen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: #131114; /* Neutral background color */
+}
+
+/* Form container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Maximum width for the form */
+    padding: 20px;
+    background-color: #0b0a09; /* Darker background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff; /* Text color for the form */
+}
+
+/* Style for the card inside the form */
+.card {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border: 1px solid #d27532; /* Primary color border */
+    border-radius: 8px;
+    margin-bottom: 16px;
+    width: 100%; /* Full width of the form container */
+    background-color: #0b0a09; /* Neutral color background for the card */
+}
+
+/* Style for the image within the card */
+.card-image {
+    width: 150px; /* Decrease the width of the image */
+    height: 100%; /* Set the height of the image to match the card height */
+    object-fit: cover;
+}
+
+/* Style for the content inside the card */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+/* Style for the heading inside the card */
+.card-heading {
+    font-size: 1.25rem; /* Adjust font size for the heading */
+    margin-bottom: 8px;
+    color: #d27532; /* Primary color for the heading */
+}
+
+/* Style for the text inside the card */
+.card-text {
+    margin-bottom: 8px;
+    color: #ffffff; /* White text color */
+}
+
+/* Style for the button inside the card */
+.card-button {
+    align-self: flex-start;
+    background-color: #d27532; /* Primary color for the button */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover state for the button */
+.card-button:hover {
+    background-color: #b96329; /* Slightly darker shade of the primary color */
+}
+
+/* Style for the back button */
+.back-button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #d27532; /* Primary color for the button */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover state for the back button */
+.back-button:hover {
+    background-color: #b96329; /* Slightly darker shade of the primary color */
+}
+
+/* Define additional color variables */
+.success {
+    color: #9ff51f; /* Success color */
+}
+
+.caution {
+    color: #f6ed10; /* Caution color */
+}
+
+.danger {
+    color: #d84b4e; /* Danger color */
+}
+
+.info {
+    color: #1d26b5; /* Info color */
+}
