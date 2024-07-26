@@ -17,8 +17,7 @@ const FirstPage = () => {
     const matches = busData.results.filter(
       (bus) =>
         bus.from.toLowerCase() === formData.from.toLowerCase() &&
-        bus.to.toLowerCase() === formData.to.toLowerCase() &&
-        bus.time === formData.time
+        bus.to.toLowerCase() === formData.to.toLowerCase()
     );
     navigate('/second', { state: { matches } });
   };
@@ -55,7 +54,6 @@ const FirstPage = () => {
               name="time"
               value={formData.time}
               onChange={handleChange}
-              required
             />
           </FormControl>
           <Button type="submit" mt={4}>
