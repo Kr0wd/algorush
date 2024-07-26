@@ -11,6 +11,7 @@ const SecondPage = () => {
       {matches.length > 0 ? (
         matches.map((match, index) => (
           <div key={index}>
+            <img src={match.img} alt={match.name} style={{ width: '100px', height: 'auto' }} />
             <p>From: {match.from}</p>
             <p>To: {match.to}</p>
             <p>Time: {match.time}</p>
