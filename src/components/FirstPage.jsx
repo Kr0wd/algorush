@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, FormControl, FormLabel, Input, Heading, VStack } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, Heading, Grid, GridItem, HStack } from '@chakra-ui/react';
 import busData from './bus.json'; // Adjust the path if needed
 import './FirstPage.css'; // Import the CSS file
 
@@ -17,49 +17,64 @@ const FirstPage = () => {
     const matches = busData.results.filter(
       (bus) =>
         bus.from.toLowerCase() === formData.from.toLowerCase() &&
-        bus.to.toLowerCase() === formData.to.toLowerCase()
+        bus.to.toLowerCase() === formData.to.toLowerCase() &&
+        bus.time === formData.time
     );
     navigate('/second', { state: { matches } });
   };
 
   return (
     <div className="fullscreen-container">
-      <Box p={4} className="form-container" width="100%" maxWidth="500px">
-        <Heading mb={6}>Search for Buses</Heading>
-        <VStack as="form" onSubmit={handleSubmit} spacing={4}>
-          <FormControl>
-            <FormLabel htmlFor="from">From:</FormLabel>
-            <Input
-              id="from"
-              name="from"
-              value={formData.from}
-              onChange={handleChange}
-              required
-            />
-          </FormControl>
-          <FormControl>
-            <FormLabel htmlFor="to">To:</FormLabel>
-            <Input
-              id="to"
-              name="to"
-              value={formData.to}
-              onChange={handleChange}
-              required
-            />
-          </FormControl>
-          <FormControl>
-            <FormLabel htmlFor="time">Time:</FormLabel>
-            <Input
-              id="time"
-              name="time"
-              value={formData.time}
-              onChange={handleChange}
-            />
-          </FormControl>
-          <Button type="submit" mt={4}>
-            Search
-          </Button>
-        </VStack>
+      <Box p={8} className="form-container" width="90vw" maxWidth="1200px">
+        <HStack spacing={4} mb={6} justifyContent="center">
+          <Button colorScheme="teal">Cabs</Button>
+          <Button colorScheme="teal">Metro</Button>
+          <Button colorScheme="teal">Bus</Button>
+        </HStack>
+        <Heading mb={6} textAlign="center">Search for Buses</Heading>
+        <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+          <GridItem colSpan={1}>
+            <FormControl>
+              <FormLabel htmlFor="from">From:</FormLabel>
+              <Input
+                id="from"
+                name="from"
+                value={formData.from}
+                onChange={handleChange}
+                required
+              />
+            </FormControl>
+          </GridItem>
+          <GridItem colSpan={1}>
+            <FormControl>
+              <FormLabel htmlFor="to">To:</FormLabel>
+              <Input
+                id="to"
+                name="to"
+                value={formData.to}
+                onChange={handleChange}
+                required
+              />
+            </FormControl>
+          </GridItem>
+          <GridItem colSpan={1}>
+            <FormControl>
+              <FormLabel htmlFor="time">Time:</FormLabel>
+              <Input
+                id="time"
+                name="time"
+                value={formData.time}
+                onChange={handleChange}
+                required
+              />
+            </FormControl>
+          </GridItem>
+          <GridItem colSpan={1} display="flex" alignItems="center" justifyContent="center">
+            <Button type="submit" mt={4} onClick={handleSubmit}>
+              Search
+            </Button>
+          </GridItem>
+        </Grid>
       </Box>
     </div>
   );

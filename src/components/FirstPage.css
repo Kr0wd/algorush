@@ -6,8 +6,8 @@ html, body, #root {
 
 .fullscreen-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100vw; /* Ensure full viewport width */
   height: 100vh; /* Ensure full viewport height */
   background-color: #0b0a09; /* Neutral color */
@@ -16,21 +16,15 @@ html, body, #root {
 
 /* Adjustments for form container */
 .form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 500px; /* Limit maximum width */
-  padding: 20px;
+  width: 90vw; /* Increase width to occupy more of the screen */
+  max-width: 1200px; /* Increase maximum width */
+  padding: 40px; /* Increase padding */
   background-color: #131114; /* Dark background for form */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Horizontal form controls */
-.horizontal-form-controls {
-  display: flex;
-  justify-content: space-between;
-  width: 100%; /* Take full width */
-  margin-bottom: 20px; /* Add spacing below the controls */
+/* Style for individual form controls */
+.form-control-item {
+  margin-bottom: 16px; /* Add spacing between form controls */
 }
