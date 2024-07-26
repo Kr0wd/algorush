@@ -28,7 +28,6 @@ const FirstPage = () => {
       <Box p={4} className="form-container" width="100%" maxWidth="500px">
         <Heading mb={6}>Search for Buses</Heading>
         <VStack as="form" onSubmit={handleSubmit} spacing={4}>
-          {/* Wrap form controls in VStack for vertical stacking with spacing */}
           <FormControl>
             <FormLabel htmlFor="from">From:</FormLabel>
             <Input
