@@ -2,20 +2,32 @@
     "results": [
       { "img":"src/assets/images1.jpeg",
         "from": "aluva",
+        "from_longitude":10.107570,
+        "from_latitude":76.345665,
         "to": "trissur",
+        "to_longitude":10.527642,
+        "to_latitude":76.214432,
         "time": "1:00",
         "name": "Charlie"
       },
       { "img":"src/assets/image3.jpg",
         "from": "aluva",
+        "from_longitude":10.107570,
+        "from_latitude":76.345665,
         "to": "perumbavoor",
+        "to_longitude":10.114700,
+        "to_latitude":76.477798,
         "time": "1:00",
         "name": "Telme"
       },
       { "img":"src/assets/image4.jpeg",
         "from": "aluva",
+        "from_longitude":10.107570,
+        "from_latitude":76.345665,
         "to": "trissur",
-        "time": "1:00",
+        "to_longitude":10.527642,
+        "to_latitude":76.214432,
+        "time": "1:30",
         "name": "MathaJet"
       }
     ]
