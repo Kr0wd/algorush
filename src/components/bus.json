@@ -1,0 +1,17 @@
+{
+    "results": [
+      {
+        "from": "aluva",
+        "to": "trissur",
+        "time": "1:00",
+        "name": "Charlie"
+      },
+      {
+        "from": "aluva",
+        "to": "perumbavoor",
+        "time": "1:00",
+        "name": "Telme"
+      }
+    ]
+  }
+  
