@@ -18,10 +18,11 @@ const SecondPage = () => {
             overflow="hidden"
             variant="outline"
             mb="4"
+            maxW="800px" // Increase the maximum width of the card
           >
             <Image
               objectFit="cover"
-              maxW={{ base: '100%', sm: '200px' }}
+              maxW={{ base: '100%', sm: '150px' }} // Decrease the maximum width of the image
               src={match.img}
               alt={match.name}
             />
@@ -49,3 +50,4 @@ const SecondPage = () => {
 };
 
 export default SecondPage;
+
