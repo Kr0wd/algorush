@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    background-color: #f9f9f9;
+    text-align: center; 
+    background-color: #d4582f;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -28,8 +28,8 @@
   
   .location-info > div {
     flex: 1;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #050505;
+    border: 1px solid #000000;
     border-radius: 8px;
     padding: 10px;
   }
