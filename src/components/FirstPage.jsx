@@ -7,6 +7,7 @@ import './FirstPage.css'; // Import the CSS file
 const FirstPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ from: '', to: '', time: '' });
+  const [selectedOption, setSelectedOption] = useState(null); // New state for selected option
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,22 +15,27 @@ const FirstPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const matches = busData.results.filter(
-      (bus) =>
-        bus.from.toLowerCase() === formData.from.toLowerCase() &&
-        bus.to.toLowerCase() === formData.to.toLowerCase() &&
-        bus.time === formData.time
-    );
-    navigate('/second', { state: { matches } });
+    if (selectedOption === 'bus') {
+      const matches = busData.results.filter(
+        (bus) =>
+          bus.from.toLowerCase() === formData.from.toLowerCase() &&
+          bus.to.toLowerCase() === formData.to.toLowerCase() &&
+          bus.time === formData.time
+      );
+      navigate('/second', { state: { matches } });
+    } else if (selectedOption === 'metro') {
+      // You can add any necessary data fetching or processing for the metro option here
+      navigate('/metro');
+    }
   };
 
   return (
     <div className="fullscreen-container">
       <Box p={8} className="form-container" width="90vw" maxWidth="1200px">
         <HStack spacing={4} mb={6} justifyContent="center">
-          <Button colorScheme="teal">Cabs</Button>
-          <Button colorScheme="teal">Metro</Button>
-          <Button colorScheme="teal">Bus</Button>
+          <Button colorScheme="teal" onClick={() => setSelectedOption('cabs')}>Cabs</Button>
+          <Button colorScheme="teal" onClick={() => setSelectedOption('metro')}>Metro</Button>
+          <Button colorScheme="teal" onClick={() => setSelectedOption('bus')}>Bus</Button>
         </HStack>
         <Heading mb={6} textAlign="center">Search for Buses</Heading>
         <Grid templateColumns="repeat(4, 1fr)" gap={6}>
