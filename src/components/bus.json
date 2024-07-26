@@ -11,6 +11,12 @@
         "to": "perumbavoor",
         "time": "1:00",
         "name": "Telme"
+      },
+      {
+        "from": "aluva",
+        "to": "trissur",
+        "time": "1:30",
+        "name": "MathaJet"
       }
     ]
   }
