@@ -8,7 +8,7 @@ const FirstPage = () => {
   return (
     <div>
       <h1>First Page</h1>
-      <button onClick={() => navigate('/second')}>Go to Second Page</button>
+      <button onClick={() => navigate('/second')}>search</button>
     </div>
   );
 };
