@@ -22,7 +22,7 @@ const FirstPage = () => {
           bus.to.toLowerCase() === formData.to.toLowerCase() &&
           bus.time === formData.time
       );
-      navigate('/second', { state: { matches } });
+      navigate('/Buses', { state: { matches } });
     } else if (selectedOption === 'metro') {
       // You can add any necessary data fetching or processing for the metro option here
       navigate('/metro');

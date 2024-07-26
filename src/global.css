@@ -21,3 +21,16 @@ html, body {
   align-items: center;
   text-align: center;
 }
+/* global.css */
+
+.breadcrumb-container {
+  padding: 1rem;
+  background-color: #2D3748; /* Chakra UI gray.700 */
+  color: white;
+}
+
+.page-container {
+  flex: 1;
+  padding: 2rem;
+}
+
