@@ -8,7 +8,7 @@ const ThirdPage = () => {
   return (
     <div>
       <h1>Third Page</h1>
-      <button onClick={() => navigate('/second')}>Back to Second Page</button>
+      <button onClick={() => navigate('/Buses')}>Back to Second Page</button>
     </div>
   );
 };
