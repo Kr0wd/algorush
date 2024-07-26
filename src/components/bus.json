@@ -1,18 +1,18 @@
 {
     "results": [
-      {
+      { "img":"src/assets/images1.jpeg",
         "from": "aluva",
         "to": "trissur",
         "time": "1:00",
         "name": "Charlie"
       },
-      {
+      { "img":"src/assets/image3.jpg",
         "from": "aluva",
         "to": "perumbavoor",
         "time": "1:00",
         "name": "Telme"
       },
-      {
+      { "img":"src/assets/image4.jpeg",
         "from": "aluva",
         "to": "trissur",
         "time": "1:30",

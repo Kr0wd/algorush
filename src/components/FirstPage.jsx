@@ -4,7 +4,7 @@ import busData from './bus.json'; // Adjust the path if needed
 
 const FirstPage = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ from: '', to: '', time: '' });
+  const [formData, setFormData] = useState({ from: '', to: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,8 +15,7 @@ const FirstPage = () => {
     const matches = busData.results.filter(
       (bus) =>
         bus.from.toLowerCase() === formData.from.toLowerCase() &&
-        bus.to.toLowerCase() === formData.to.toLowerCase() &&
-        bus.time === formData.time
+        bus.to.toLowerCase() === formData.to.toLowerCase()
     );
     navigate('/second', { state: { matches } });
   };
@@ -44,18 +43,6 @@ const FirstPage = () => {
               type="text"
               name="to"
               value={formData.to}
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Time:
-            <input
-              type="text"
-              name="time"
-              value={formData.time}
               onChange={handleChange}
               required
             />
