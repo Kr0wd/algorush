@@ -1,3 +1,4 @@
+// src/components/FirstPage.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, FormControl, FormLabel, Input, Heading, Grid, GridItem, HStack } from '@chakra-ui/react';
@@ -7,7 +8,7 @@ import './FirstPage.css'; // Import the CSS file
 const FirstPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ from: '', to: '', time: '' });
-  const [selectedOption, setSelectedOption] = useState(null); // New state for selected option
+  const [selectedMode, setSelectedMode] = useState('bus');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,17 +16,18 @@ const FirstPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedOption === 'bus') {
+    if (selectedMode === 'bus') {
       const matches = busData.results.filter(
         (bus) =>
           bus.from.toLowerCase() === formData.from.toLowerCase() &&
           bus.to.toLowerCase() === formData.to.toLowerCase() &&
           bus.time === formData.time
       );
-      navigate('/Buses', { state: { matches } });
-    } else if (selectedOption === 'metro') {
-      // You can add any necessary data fetching or processing for the metro option here
+      navigate('/second', { state: { matches } });
+    } else if (selectedMode === 'metro') {
       navigate('/metro');
+    } else if (selectedMode === 'cabs') {
+      navigate('/cabs');
     }
   };
 
@@ -33,9 +35,24 @@ const FirstPage = () => {
     <div className="fullscreen-container">
       <Box p={8} className="form-container" width="90vw" maxWidth="1200px">
         <HStack spacing={4} mb={6} justifyContent="center">
-          <Button colorScheme="teal" onClick={() => setSelectedOption('cabs')}>Cabs</Button>
-          <Button colorScheme="teal" onClick={() => setSelectedOption('metro')}>Metro</Button>
-          <Button colorScheme="teal" onClick={() => setSelectedOption('bus')}>Bus</Button>
+          <Button
+            colorScheme={selectedMode === 'cabs' ? 'teal' : 'gray'}
+            onClick={() => setSelectedMode('cabs')}
+          >
+            Cabs
+          </Button>
+          <Button
+            colorScheme={selectedMode === 'metro' ? 'teal' : 'gray'}
+            onClick={() => setSelectedMode('metro')}
+          >
+            Metro
+          </Button>
+          <Button
+            colorScheme={selectedMode === 'bus' ? 'teal' : 'gray'}
+            onClick={() => setSelectedMode('bus')}
+          >
+            Bus
+          </Button>
         </HStack>
         <Heading mb={6} textAlign="center">Search for Buses</Heading>
         <Grid templateColumns="repeat(4, 1fr)" gap={6}>
